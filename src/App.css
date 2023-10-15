@@ -1,0 +1,63 @@
+body{
+   color: rgb(6, 6, 6);
+}
+/* Add this to your main CSS file */
+
+.primary-cta-button {
+   background-color: #611305;  /* Tomato color, or choose any color that fits your design */
+   color: white;
+   padding: 10px 30px;
+   border-radius: 5px;
+   font-size: 1.2rem;
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+
+   /* Optional: Add a hover effect */
+   &:hover {
+       background-color: #8a2a10;  /* Darken the color a bit on hover */
+   }
+}
+
+.cta-container {
+   
+   display: flex;
+   justify-content: center;  /* Horizontally center the button */
+   align-items: center;      /* Vertically center the button, if the container has a height */
+   margin: 40px 0;           /* Add some vertical spacing around the button */
+    /* Add a background image */
+   
+    /* Control the size of the image. You can adjust this as necessary */
+    background-size: cover;
+ 
+    /* Position the image. Adjust as necessary */
+    background-position: center;
+    
+    /* Add some padding to ensure the button isn't right against the edge of the image */
+    padding: 20px;
+}
+
+.footer-container {
+   background-color: #333;
+   color: white;
+   padding: 20px 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.footer-links, .footer-contact, .footer-copyright {
+   margin: 10px 0;
+}
+
+.footer-links a {
+   margin-right: 15px;
+   color: white;
+   text-decoration: none;
+   transition: color 0.3s ease;
+
+   &:hover {
+       color: #ff9f00;  /* Change to desired hover color */
+   }
+}

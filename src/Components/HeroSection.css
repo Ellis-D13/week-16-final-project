@@ -1,0 +1,50 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Container for the hero text */
+.hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+   
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2rem;
+    color: rgb(53, 5, 5);
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: rgb(30, 2, 2);
+    text-align: center;
+}
+
+.hero-cta {
+    position: absolute;
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #611305; 
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
