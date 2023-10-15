@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# Build directory
+/build
+
+# Environment Variables
+.env
+
+# IDE folders
+.idea/
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
