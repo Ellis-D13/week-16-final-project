@@ -1,4 +1,3 @@
-// CaserolePage.js (or CasserolePage.js)
 import React from "react";
 
 const CaserolePage = () => {

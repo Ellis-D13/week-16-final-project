@@ -3,7 +3,7 @@ import React from 'react';
 function ContactPage() {
     return (
         <div>
-            {/* Your RecipesPage content here */}
+            {/* footer info not active yet*/}
         </div>
     );
 }

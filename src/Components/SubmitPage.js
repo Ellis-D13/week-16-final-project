@@ -19,7 +19,7 @@ function SubmitPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // here you can handle the form submission, e.g., sending the data to a server.
+        // sending the data to a server.
         console.log(formData);
     };
 

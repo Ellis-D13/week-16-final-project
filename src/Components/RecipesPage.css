@@ -1,0 +1,22 @@
+/* container for recipes list */
+.recipes-list {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;    
+    padding: 20px 0;
+}
+
+/* each recipe item */
+.recipes-list > div {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* styling for the selected recipe details */
+.recipe-details {
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+}

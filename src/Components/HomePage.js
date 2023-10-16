@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from './HeroSection'; 
 import ctaImage from '../cta.jpg';
+import '../App.css';
+
 
 
 function HomePage() {
