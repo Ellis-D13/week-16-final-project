@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import '../App.css';
 
+// define NavbarComponent as a functional React component
 function NavbarComponent() {
     return (
+        // start of the navbar, light background and lg breakpoint for expansion
         <Navbar bg="light" expand="lg">
             <Navbar.Brand as={Link} to="/"><img
                 src="/GG logo.png"
@@ -30,10 +30,8 @@ function NavbarComponent() {
                         <NavDropdown.Item as={Link} to="/submit">Submit to Win</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-success">Search</Button>
-                </Form>
+                     {/* removed the search field and added a contact us button */}
+                    <Button variant="outline-success" as={Link} to="/contact">Contact Us</Button>
             </Navbar.Collapse>
         </Navbar>
     );

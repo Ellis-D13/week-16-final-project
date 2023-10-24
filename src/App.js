@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // import required modules and components
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './Components/HomePage';
@@ -11,9 +11,14 @@ import SubmitPage from './Components/SubmitPage';
 import PicklesPage from './Components/PicklesPage';
 import PiePage from './Components/PiePage';
 import CaserolePage from './Components/CaserolePage';
-
+import AboutUs from './Components/AboutUs';
+import TermsOfService from './Components/TermsOfService';
+import PrivacyPolicy from './Components/PrivacyPolicy';
+// define the main app functional component 
 function App() {
+  // component rendering logic
   return (
+    // router component for routing 
     <Router>
       <NavbarComponent />
       <Switch>
@@ -25,6 +30,10 @@ function App() {
         <Route path="/pie" component={PiePage} />
         <Route path="/caserole" component={CaserolePage} />
         <Route path="/submit" component={SubmitPage} />
+        <Route path="/about-us" component={AboutUs} />
+        <Route path="/terms-of-service" component={TermsOfService} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+
 
       </Switch>
       <FooterComponent />

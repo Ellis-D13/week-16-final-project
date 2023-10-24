@@ -2,8 +2,10 @@ import React from 'react';
 import './HeroSection.css';  
 import { Link } from 'react-router-dom';
 
+// define hero functional component 
 function HeroSection() {
     return (
+        // container for the hero section 
         <div className="hero-section">
             <img src="/HeroSection.jpg" alt="Gourmet Games" className="hero-image" />
             <div className="hero-text-container">

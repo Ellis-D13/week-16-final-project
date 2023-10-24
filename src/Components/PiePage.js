@@ -8,6 +8,18 @@ const PiePage = () => {
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
 
+    // define a constant array of object representing winning pie recipes
+    const winningPieRecipes = [
+        {
+            id: 1, 
+            title: "Tammy's Sweet Potato Pie", 
+            image: "/sweetpotatopie.jpg", 
+            description: "A classic sweet potato pie, passed down for five generations", 
+            ingredients: ["Sweet Potatoes", "Sugar", "Cinnamon", "Pie Crust"],
+            instructions: "Cook and mash your sweet potatoes, mix with other ingredients and add to pie shell, bake at 350 for an hour"
+        }
+    ];
+
     // function to handle the addition of a new recipe
     const handleAddRecipe = () => {
         // make the new recipe
@@ -31,6 +43,18 @@ const PiePage = () => {
 
     return (
         <div>
+            <h1>Winning Pie Recipe 2023</h1>
+            {/* display winning pie recipe */}
+            {winningPieRecipes.map(winningRecipe => (
+                <div key={winningRecipe.id}>
+                    <h2>{winningRecipe.title}</h2>
+                    <img src={winningRecipe.image} alt={winningRecipe.title} />
+                    <p>{winningRecipe.description}</p>
+                    <p><strong>Ingredients:</strong> {winningRecipe.ingredients.join(", ")}</p>
+                    <p><strong>Instructions:</strong> {winningRecipe.instructions}</p>
+                </div>
+            ))}
+
             <h2>Add your Pie Recipe</h2>
             {/* input field for the recipe title */}
             <input

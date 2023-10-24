@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './SubmitPage.css';
+import React, { useState } from 'react'; // import React and useState hook from React
+import './SubmitPage.css'; // import the associated sytlesheet
 
+// define the SubmitPage functional component
 function SubmitPage() {
+    // imitialize state for form data
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -11,18 +13,20 @@ function SubmitPage() {
         preparation: '',
         consent: false
     });
-
+    // function to handle changes
     const handleInputChange = (event) => {
+        // destructure name and value from event.target
         const { name, value } = event.target;
+        // update state
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
-
+    // function to handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        // sending the data to a server.
+        // sending the data to a server. No actual submission logic, demo for class 
         console.log(formData);
     };
-
+    // return JSX for the component 
     return (
         <div>
             <h1>Submit Your Best Pie Recipe!</h1>
@@ -48,7 +52,7 @@ function SubmitPage() {
             </form>
             
              <footer>
-                <a href="#">Contest Rules</a> | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+                <a href="terms-of-service">Terms of Service</a> | <a href="privacy-policy">Privacy Policy</a>
             </footer>
         </div>
     );

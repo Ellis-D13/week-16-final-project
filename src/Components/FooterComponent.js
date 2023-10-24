@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// define the FooterComponent functional component
 function FooterComponent() {
     return (
+        // container for the entire footer
         <div className="footer-container">
             <div className="footer-links">
-                <Link to="/about">About Us</Link>
+                <Link to="/about-us">About Us</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/terms-of-service">Terms of Service</Link>
                 <Link to="/privacy-policy">Privacy Policy</Link>
@@ -22,5 +24,5 @@ function FooterComponent() {
         </div>
     );
 }
-
+// export footer to all other parts of the app
 export default FooterComponent;

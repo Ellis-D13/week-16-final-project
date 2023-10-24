@@ -5,10 +5,10 @@ import ctaImage from '../cta.jpg';
 import '../App.css';
 
 
-
+// define the HomePage functional component 
 function HomePage() {
     return (
-        
+        // container for the landing page
         <div className="landing-page-container">
             <h1>Gourmet Games</h1>
             <p>This is the homepage of the app where you can find delicious recipes and more!</p>
@@ -37,7 +37,7 @@ Do you believe you've crafted the ultimate pie? Whether it's a family recipe pas
         </div>
     );
 }
-
+// export the page to be used in other parts of the app will look the same on all pages
 export default HomePage;
 
 

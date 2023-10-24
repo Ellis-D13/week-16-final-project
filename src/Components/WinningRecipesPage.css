@@ -1,0 +1,25 @@
+/* main container for the recipes */ 
+.winning-recipes-container {
+    display: flex; /* flexbox to layout recipe cards in a row */
+    flex-wrap: wrap; /* allows recipe cards to wrap to the next line if needed */ 
+    justify-content: space-between; /* distributes the receipe cards evenly */ 
+    gap: 20px; /* space between each recipe card */ 
+}
+
+/* recipe card styling */ 
+.recipe-card {
+    width: 30%; /* width of each recipe card */ 
+    border: 1px solid #e0e0e0; /* border for each recipe card */ 
+    border-radius: 8px;  /* rounded corners for each recipe */ 
+    padding: 15px; /* space inside each recipe card */ 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* styling for images inside the recipe card */ 
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}

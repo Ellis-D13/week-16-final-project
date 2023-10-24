@@ -8,6 +8,18 @@ const CaserolePage = () => {
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
 
+    // winning casserole recipe
+    const winningCasseroleRecipes = [
+        {
+            id: 1, 
+            title: "Jessica's Corn Casserole", 
+            image: "/casserole land.jpg", 
+            description: "A creamy and delicious casserole that's perfect for any occasion.", 
+            ingredients: ["Chicken", "Canned Sweet Corn", "Rice", "Mushroom Soup", "Cheese"], 
+            instructions: "Mix all ingredients and bake at 350 for one hour."
+                }
+    ];
+
     // function to handle the addition of a new recipe
     const handleAddRecipe = () => {
         // make the new recipe
@@ -31,6 +43,17 @@ const CaserolePage = () => {
 
     return (
         <div>
+            <h1>Winning Casserole Recipe 2023</h1>
+            {/* display winning casserole recipe */}
+            {winningCasseroleRecipes.map(winningRecipe => (
+                <div key={winningRecipe.id}>
+                    <h2>{winningRecipe.title}</h2>
+                    <img src={winningRecipe.image} alt={winningRecipe.title} />
+                    <p>{winningRecipe.description}</p>
+                    <p><strong>Ingredients:</strong> {winningRecipe.ingredients.join(", ")}</p>
+                    <p><strong>Instructions:</strong> {winningRecipe.instructions}</p>
+                </div>
+            ))}
             <h2>Add your Caserole Recipe</h2>
             {/* input field for the recipe title */}
             <input
