@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import '../App.css';
-import { Container } from 'react-bootstrap';
+
 
 // define NavbarComponent as a functional React component
 function NavbarComponent() {
@@ -12,13 +12,14 @@ function NavbarComponent() {
         // start of the navbar, light background and lg breakpoint for expansion
         <Navbar bg="light" expand="lg">
        
-            <Navbar.Brand as={Link} to="/"><img
+            <Navbar.Brand as={Link} to="/" className='navbar-brand-padding'><img
                 src="/GG logo.png"
                 width="40"
                 height="40"
                 className="d-inline-block align-top"
                 alt="Gourmet Games logo"
-            /></Navbar.Brand>
+            />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">

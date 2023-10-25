@@ -14,6 +14,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
    align-self: center;
 }
 
+.navbar-brand-padding {
+   padding-left: 30px;
+}
+
 .primary-cta-button {
    background-color: #611305;  
    color: white;

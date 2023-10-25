@@ -66,10 +66,11 @@ const PiePage = () => {
     
 
     return (
-        <div className="card mb-4">
-            <h1 className="text-dark my-4">Winning Pie Recipe 2023</h1>
+    
+            <div className="card mb-4">
+            <h1 className="text-dark my-4 text-center">Winning Pie Recipe 2023</h1>
             {/* display winning pie recipe */}
-            
+        
             {winningPieRecipes.map(winningRecipe => (
                 <div key={winningRecipe.id}>
                     <h2>{winningRecipe.title}</h2>
@@ -122,13 +123,15 @@ const PiePage = () => {
                         <h3 className="card-title">{recipe.title}</h3>
                         <p><strong>Ingredients:</strong> {recipe.ingredients}</p>
                         <p><strong>Instructions:</strong> {recipe.instructions}</p>
-                        <button onClick={() => handleDeleteRecipe(recipe.id)} className="btn btn-dark my-2 me-3">Delete</button>
+                        <button onClick={() => handleDeleteRecipe(recipe.id)} style={{ marginRight: '20px'}}>Delete</button>
                         <button onClick={() => {
                             setEditingRecipe(recipe.id);
                             setRecipeTitle(recipe.title);
                             setRecipeIngredients(recipe.ingredients);
                             setRecipeInstructions(recipe.instructions);
-                        }} className="btn btn-dark my-2">Update</button>
+                        }}>
+                            Update
+                        </button>
                     </div>
                 </div>
                 ))}
