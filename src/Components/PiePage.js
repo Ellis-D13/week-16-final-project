@@ -7,6 +7,7 @@ const PiePage = () => {
     const [recipeTitle, setRecipeTitle] = useState(''); 
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
+    const [editingRecipe, setEditingRecipe] = useState(null);
 
     // define a constant array of object representing winning pie recipes
     const winningPieRecipes = [
@@ -31,20 +32,44 @@ const PiePage = () => {
         };
         // add new recipe to the existing recipes array
         setRecipes([...recipes, newRecipe]);
-    }
+        setRecipeTitle('');
+        setRecipeIngredients('');
+        setRecipeInstructions('');
+    };
+
+    // function to update recipe
+    const handleUpdateRecipe = (id) => {
+        const updatedRecipes = recipes.map(recipe => {
+            if (recipe.id === id) {
+                return {
+                    ...recipe,
+                    title: recipeTitle, 
+                    ingredients: recipeIngredients,
+                    instructions: recipeInstructions,
+                };
+            }
+            return recipe;
+        });
+        setRecipes(updatedRecipes);
+        setEditingRecipe(null);
+        setRecipeTitle('');
+        setRecipeIngredients('');
+        setRecipeInstructions('');
+    };
     // function to delete recipe
     const handleDeleteRecipe = (id) => {
         // filter out recipe with specific id 
         const updatedRecipes = recipes.filter(recipe => recipe.id !== id);
         // update the recipes state with the filtered list
         setRecipes(updatedRecipes);
-    }
+    };
     
 
     return (
-        <div>
-            <h1>Winning Pie Recipe 2023</h1>
+        <div className="card mb-4">
+            <h1 className="text-dark my-4">Winning Pie Recipe 2023</h1>
             {/* display winning pie recipe */}
+            
             {winningPieRecipes.map(winningRecipe => (
                 <div key={winningRecipe.id}>
                     <h2>{winningRecipe.title}</h2>
@@ -54,43 +79,63 @@ const PiePage = () => {
                     <p><strong>Instructions:</strong> {winningRecipe.instructions}</p>
                 </div>
             ))}
+           
+        
 
-            <h2>Add your Pie Recipe</h2>
+            <h2 className="text-dark mt-5 my-4 text-center">Add your Pie Recipe</h2>
+            <div className="mb-3">
             {/* input field for the recipe title */}
             <input
+                className="form-control"
                 value={recipeTitle}
                 onChange={e => setRecipeTitle(e.target.value)} //update state when input value changes
                 placeholder="Recipe Title"
                 />
+            </div>  
             {/* text area for the ingredients */}
+            <div className="mb-3">
             <textarea
+                className="form-control"
                 value={recipeIngredients}
                 onChange={e => setRecipeIngredients(e.target.value)}
                 placeholder="Ingredients"
                 />
+            </div>
             {/* text area for instructions */}
+            <div className="mb-3">
             <textarea
+                className="form-control my-2"
                 value={recipeInstructions}
                 onChange={e => setRecipeInstructions(e.target.value)}
                 placeholder="Instructions"
                 />
+            </div>
                 {/* button to trigger the addition of new recipe */}
-                <button onClick={handleAddRecipe}>Add Recipe</button>
-                
+                <button onClick={handleAddRecipe} className="btn btn-dark my-2 me-3">Add Recipe</button>
+                {/* button to update recipe */}
+                <button onClick={() => handleUpdateRecipe(editingRecipe)} className="btn btn-dark my-2 me-3"> Update Recipe</button>                
             
                 {recipes.map(recipe => (
-                    <div key={recipe.id}>
-                        <h3>{recipe.title}</h3>
+                    <div className="card mb-3" key={recipe.id}>
+                        <div className="card-body">
+
+                        <h3 className="card-title">{recipe.title}</h3>
                         <p><strong>Ingredients:</strong> {recipe.ingredients}</p>
                         <p><strong>Instructions:</strong> {recipe.instructions}</p>
-                        <button onClick={() => handleDeleteRecipe(recipe.id)}>Delete</button>
+                        <button onClick={() => handleDeleteRecipe(recipe.id)} className="btn btn-dark my-2 me-3">Delete</button>
+                        <button onClick={() => {
+                            setEditingRecipe(recipe.id);
+                            setRecipeTitle(recipe.title);
+                            setRecipeIngredients(recipe.ingredients);
+                            setRecipeInstructions(recipe.instructions);
+                        }} className="btn btn-dark my-2">Update</button>
                     </div>
-
+                </div>
                 ))}
             </div>
 
     
     );
-}
+};
 
 export default PiePage;

@@ -1,17 +1,17 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 20px;
 }
 
 div {
-    padding: 20px;
+    padding: 30px;
 }
 
 h1, h2 {
     color: #333;
-    margin-top: 0;
+    margin-top: 15px;
 }
 
 p {
@@ -21,16 +21,22 @@ p {
 
 /* Form styles */
 form {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 input, textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+}
+
+h1, h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 
 textarea {
@@ -45,12 +51,12 @@ label {
 }
 
 input[type="checkbox"] {
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 button {
     display: inline-block;
-    background-color: #007BFF;
+    background-color: #222a32;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -60,7 +66,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #000409;
 }
 
 /* Footer styles */
@@ -73,13 +79,13 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: #007BFF;
+    color: #22282e;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #0056b3;
+    color: #000509;
 }
 
 .consent-label {

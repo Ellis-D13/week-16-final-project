@@ -3,10 +3,12 @@ import React, { useState } from "react";
 const CaserolePage = () => {
     // state to hold the list of recipes
     const [recipes, setRecipes] = useState([]); 
-    // states to hold the valuse of the input fields for a new recipe
+    // states to hold the values of the input fields for a new recipe
     const [recipeTitle, setRecipeTitle] = useState(''); 
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
+    const [editingRecipe, setEditingRecipe] = useState(null);
+    
 
     // winning casserole recipe
     const winningCasseroleRecipes = [
@@ -31,7 +33,31 @@ const CaserolePage = () => {
         };
         // add new recipe to the existing recipes array
         setRecipes([...recipes, newRecipe]);
-    }
+        // clear input fields
+        setRecipeTitle('');
+        setRecipeIngredients('');
+        setRecipeInstructions('');
+    };
+    // function to handle updating an existing recipe
+    const handleUpdateRecipe = (id) => {
+        const updatedRecipes = recipes.map(recipe => {
+            if (recipe.id === id ) {
+                return {
+                    ...recipe, 
+                    title: recipeTitle, 
+                    ingredients: recipeIngredients, 
+                    instructions: recipeInstructions, 
+                };
+            }
+            return recipe;
+        });
+        setRecipes(updatedRecipes);
+        setEditingRecipe(null); // reset editing state
+        setRecipeTitle('');
+        setRecipeIngredients('');
+        setRecipeInstructions('');
+    };    
+
     // function to delete recipe
     const handleDeleteRecipe = (id) => {
         // filter out recipe with specific id 
@@ -54,7 +80,7 @@ const CaserolePage = () => {
                     <p><strong>Instructions:</strong> {winningRecipe.instructions}</p>
                 </div>
             ))}
-            <h2>Add your Caserole Recipe</h2>
+            <h2>Add your Casserole Recipe</h2>
             {/* input field for the recipe title */}
             <input
                 value={recipeTitle}
@@ -74,15 +100,25 @@ const CaserolePage = () => {
                 placeholder="Instructions"
                 />
                 {/* button to trigger the addition of new recipe */}
-                <button onClick={handleAddRecipe}>Add Recipe</button>
-                
+                <button onClick={handleAddRecipe} style={{ marginRight: '20px'}}>Add Recipe</button>
+                {/* button to update the recipe */}
+                <button onClick={() => handleUpdateRecipe(editingRecipe)} >Update Recipe</button>
+              
             
                 {recipes.map(recipe => (
                     <div key={recipe.id}>
                         <h3>{recipe.title}</h3>
                         <p><strong>Ingredients:</strong> {recipe.ingredients}</p>
                         <p><strong>Instructions:</strong> {recipe.instructions}</p>
-                        <button onClick={() => handleDeleteRecipe(recipe.id)}>Delete</button>
+                        <button onClick={() => handleDeleteRecipe(recipe.id)} style={{ marginRight: '20px'}}>Delete</button>
+                        <button onClick={() => {
+                            setEditingRecipe(recipe.id);
+                            setRecipeTitle(recipe.title);
+                            setRecipeIngredients(recipe.ingredients);
+                            setRecipeInstructions(recipe.instructions);
+                        }}>
+                            Update
+                        </button>
                     </div>
 
                 ))}
@@ -90,6 +126,6 @@ const CaserolePage = () => {
 
     
     );
-}
+};
 
 export default CaserolePage;

@@ -4,16 +4,18 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import '../App.css';
+import { Container } from 'react-bootstrap';
 
 // define NavbarComponent as a functional React component
 function NavbarComponent() {
     return (
         // start of the navbar, light background and lg breakpoint for expansion
         <Navbar bg="light" expand="lg">
+       
             <Navbar.Brand as={Link} to="/"><img
                 src="/GG logo.png"
-                width="30"
-                height="30"
+                width="40"
+                height="40"
                 className="d-inline-block align-top"
                 alt="Gourmet Games logo"
             /></Navbar.Brand>
@@ -31,7 +33,7 @@ function NavbarComponent() {
                     </NavDropdown>
                 </Nav>
                      {/* removed the search field and added a contact us button */}
-                    <Button variant="outline-success" as={Link} to="/contact">Contact Us</Button>
+                    <Button variant="outline-dark" as={Link} to="/contact">Contact Us</Button>
             </Navbar.Collapse>
         </Navbar>
     );

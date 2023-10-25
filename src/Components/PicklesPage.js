@@ -7,6 +7,7 @@ const PicklesPage = () => {
     const [recipeTitle, setRecipeTitle] = useState(''); 
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
+    const [editingRecipe, setEditingRecipe] = useState(null);
 
     // define a constant array of objects representing winning recipes
     const winningRecipes = [
@@ -31,7 +32,30 @@ const PicklesPage = () => {
         };
         // add new recipe to the existing recipes array
         setRecipes([...recipes, newRecipe]);
-    }
+        setRecipeTitle('');
+        setRecipeIngredients('');
+        setRecipeInstructions('');
+    };
+
+    //function to handle updating an exisitng recipe
+    const handleUpdateRecipe = (id) => {
+        const updatedRecipes = recipes.map(recipe => {
+            if (recipe.id === id) {
+                return {
+                    ...recipe, 
+                    title: recipeTitle,
+                    ingredients: recipeIngredients, 
+                    instructions: recipeInstructions,
+                };
+            }
+            return recipe;
+        });
+        setRecipes(updatedRecipes);
+        setEditingRecipe(null);
+        setRecipeTitle('');
+        setRecipeIngredients('');
+        setRecipeInstructions('');
+    };
     // function to delete recipe
     const handleDeleteRecipe = (id) => {
         // filter out recipe with specific id 
@@ -78,14 +102,24 @@ const PicklesPage = () => {
                     placeholder="Instructions"
                 />
                 {/* button to trigger the addition of new recipe */}
-                <button onClick={handleAddRecipe}>Add Recipe</button>
+                <button onClick={handleAddRecipe} style={{ marginRight: '20px'}}>Add Recipe</button>
+                {/* button to update the recipe */}
+                <button onClick={() => handleUpdateRecipe(editingRecipe)}>Update Recipe</button>
     
                 {recipes.map(recipe => (
                     <div key={recipe.id}>
                         <h3>{recipe.title}</h3>
                         <p><strong>Ingredients:</strong> {recipe.ingredients}</p>
                         <p><strong>Instructions:</strong> {recipe.instructions}</p>
-                        <button onClick={() => handleDeleteRecipe(recipe.id)}>Delete</button>
+                        <button onClick={() => handleDeleteRecipe(recipe.id)} style={{ marginRight: '20px'}}>Delete</button>
+                        <button onClick={() => {
+                            setEditingRecipe(recipe.id);
+                            setRecipeTitle(recipe.title);
+                            setRecipeIngredients(recipe.ingredients);
+                            setRecipeInstructions(recipe.instructions);
+                        }}>
+                            Update
+                        </button>
                     </div>
                 ))}
             </div>

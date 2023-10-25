@@ -29,8 +29,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
    align-items: center;      /* Vertically center the button, if the container has a height */
    margin: 40px 0;           /* Add some vertical spacing around the button */
    height: 400px; /* add height to the background of the buttons */  
-   background-size: cover ; /* Control the size of the image. You can adjust this as necessary */
-   background-position: center; /* Position the image. Adjust as necessary */
+   background-size: cover ; /* Control the size of the image. */
+   background-position: center; /* Position the image. */
    padding: 20px; /* Add some padding to ensure the button isn't right against the edge of the image */
     
 }
