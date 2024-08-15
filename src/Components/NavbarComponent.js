@@ -32,6 +32,9 @@ function NavbarComponent() {
                         <NavDropdown.Divider />
                         <NavDropdown.Item as={Link} to="/submit">Submit to Win</NavDropdown.Item>
                     </NavDropdown>
+                    <Nav.Link as={Link} to="/tip-calculator">Tip Calculator</Nav.Link>
+                    <Nav.Link as={Link} to="/tip-distribution">Tip Distribution Calculator</Nav.Link>
+
                 </Nav>
                      {/* removed the search field and added a contact us button */}
                     <Button variant="outline-dark" as={Link} to="/contact">Contact Us</Button>
