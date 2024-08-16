@@ -14,6 +14,9 @@ import CaserolePage from './Components/CaserolePage';
 import AboutUs from './Components/AboutUs';
 import TermsOfService from './Components/TermsOfService';
 import PrivacyPolicy from './Components/PrivacyPolicy';
+import TipCalculator from './Components/TipCalculator';
+import TipDistributionCalculator from './Components/TipDistributionCalculator';
+
 // define the main app functional component 
 function App() {
   // component rendering logic
@@ -33,6 +36,8 @@ function App() {
         <Route path="/about-us" component={AboutUs} />
         <Route path="/terms-of-service" component={TermsOfService} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/tip-calculator" component={TipCalculator} />
+        <Route path="/tip-distribution" component={TipDistributionCalculator} />
 
 
       </Switch>
@@ -40,6 +45,8 @@ function App() {
     </Router>
   );
 }
+
+
 
 export default App;
 

@@ -29,7 +29,7 @@ const TipDistributionCalculator = () => {
     };
 
     return (
-        <div style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
+        <div className="container">  {/* Updated the className */}
             <h2>Tip Distribution Calculator</h2>
             <div>
                 <label>
@@ -38,28 +38,26 @@ const TipDistributionCalculator = () => {
                         type="number" 
                         value={totalTips} 
                         onChange={handleTotalTipsChange} 
-                        style={{ marginLeft: '10px', marginBottom: '10px' }}
                     />
                 </label>
             </div>
             <div>
                 <h3>Employee Shares</h3>
                 {employees.map(emp => (
-                    <div key={emp.id} style={{ marginBottom: '10px' }}>
+                    <div key={emp.id}>
                         <label>
                             Employee {emp.id} Percentage/Hours: 
                             <input 
                                 type="number" 
                                 value={emp.value} 
                                 onChange={(e) => handleEmployeeChange(emp.id, e.target.value)} 
-                                style={{ marginLeft: '10px' }}
                             />
                         </label>
                     </div>
                 ))}
                 <button onClick={addEmployee}>Add Employee</button>
             </div>
-            <div style={{ marginTop: '20px' }}>
+            <div>
                 <button onClick={calculateDistribution}>Calculate Distribution</button>
             </div>
             <div>
