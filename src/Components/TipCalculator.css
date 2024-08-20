@@ -1,0 +1,70 @@
+/* Styling for the main tip calculator container */
+.tip-calculator {
+    max-width: 400px; /* Limits the width of the container */
+    margin: 0 auto; /* Centers the container on the page */
+    padding: 20px; /* Adds padding inside the container */
+    background-color: #f9f9f9; /* Light grey background color */
+    border-radius: 8px; /* Rounds the corners of the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    font-family: Arial, sans-serif; /* Sets the font style for text */
+}
+
+/* Styling for the component's heading */
+.tip-calculator h2 {
+    text-align: center; /* Centers the heading text */
+    margin-bottom: 20px; /* Adds space below the heading */
+    color: #333; /* Dark grey text color */
+}
+
+/* Styling for input groups (label and input fields) */
+.input-group {
+    margin-bottom: 15px; /* Adds space below each input group */
+}
+
+/* Styling for labels above input fields */
+.input-group label {
+    display: block; /* Makes the label take up the full width of the container */
+    margin-bottom: 5px; /* Adds space below the label */
+    font-weight: bold; /* Makes the label text bold */
+    color: #555; /* Medium grey text color */
+}
+
+/* Styling for the input fields */
+.input-group input {
+    width: 100%; /* Makes the input field take up the full width of the container */
+    padding: 8px; /* Adds padding inside the input field */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's width */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px; /* Rounds the corners of the input field */
+    font-size: 16px; /* Sets the font size for the text inside the input field */
+}
+
+/* Styling for the calculate button */
+button {
+    width: 100%; /* Makes the button take up the full width of the container */
+    padding: 10px; /* Adds padding inside the button */
+    background-color: #4CAF50; /* Green background color */
+    border: none; /* Removes the default border */
+    border-radius: 4px; /* Rounds the corners of the button */
+    color: white; /* White text color */
+    font-size: 16px; /* Sets the font size for the button text */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    margin-top: 10px; /* Adds space above the button */
+}
+
+/* Hover effect for the calculate button */
+button:hover {
+    background-color: #45a049; /* Slightly darker green when hovering over the button */
+}
+
+/* Styling for the results section */
+.results {
+    margin-top: 20px; /* Adds space above the results section */
+    text-align: center; /* Centers the result text */
+}
+
+/* Styling for the result text */
+.results p {
+    font-size: 18px; /* Increases the font size for the result text */
+    color: #333; /* Dark grey text color */
+}

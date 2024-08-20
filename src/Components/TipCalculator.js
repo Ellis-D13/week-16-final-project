@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TipCalculator.css'; // Importing the associated CSS file for styling
 
 const TipCalculator = () => {
     const [billAmount, setBillAmount] = useState(0);
